@@ -51,6 +51,7 @@ Thumbs.db
 images/
 node_modules/
 branches/
+.vscode/
 
 # Debugging Resources #
 #######################
