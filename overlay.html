@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <title>Overlay</title>
+   <link rel="stylesheet" href="stylesheets/overlay.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400;0,700;1,400;1,700&family=Cherry+Swash:wght@400;700&family=Lato:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400&family=Oswald:wght@300;400;600&display=swap"
+      rel="stylesheet">
+</head>
+
+<body>
+   <main>
+      <section id="scoreboard">
+         <div id="player1Flag" class="player1flag">
+         </div>
+         <div class="player1name"><span id="p1Name">Player 1 Name</span>&nbsp;&nbsp;&nbsp;<span
+               id="p1Handicap">(0)</span></div>
+         <div id="player1ScoreContainer" class="player1score"><span id="p1Score">0</span></div>
+         <div class="matchscore"><span id="p1MatchScore">0</span> - <span id="p2MatchScore">0</span></div>
+         <div id="player2ScoreContainer" class="player2score"><span id="p2Score">0</span></div>
+         <div class="player2name"><span id="p2Name">Player 2 Name</span>&nbsp;&nbsp;&nbsp;<span
+               id="p2Handicap">(0)</span></div>
+         <div id="player2Flag" class="player2flag">
+         </div>
+         <div class="race" id="straightRace">Race to&nbsp;<span id="straightRaceNeeded">8</span></div>
+         <div class="race" id="handicapRace">Race&nbsp;<span id="player1RaceNeeded"> 11 </span> - <span
+               id="player2RaceNeeded">
+               7 </span></div>
+      </section>
+      <section id="scoreboard2">
+         <div></div>
+      </section>
+   </main>
+
+   <!-- Scripts -->
+   <script src="scripts/main.js"></script>
+   <script src="scripts/overlay.js"></script>
+   <script>
+
+   </script>
+</body>
+
+</html>
