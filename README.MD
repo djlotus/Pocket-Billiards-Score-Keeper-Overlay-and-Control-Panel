@@ -1,7 +1,5 @@
 # Pocket Billiards Score Keeper Overlay
 
-[![License](https://www.gnu.org/graphics/license-logos-by-christian-candena-cc-by.png)](LICENSE)
-
 ## Introduction
 
 Pocket Billiards Score Keeper Overlay; designed to enhance your streaming experience when broadcasting billiards matches. This overlay provides a streamlined, easy-to-use interface for scoring, allowing you to focus on the game while keeping your audience engaged.
@@ -28,21 +26,59 @@ Having an easy-to-use and easy-to-install control panel is essential for streame
 
 ## Usage
 
-Coming Soon...
+### OBS Studio
+
+#### Browser Source
+
+**Add a New Browser Source**
+- In the OBS Studio main window, right-click in the "Sources" box.
+- Select "Add" > "Browser."
+
+**Name Your Source**
+Enter a name for your source (e.g., "Score Board").
+
+**Configure the Browser Source**
+- In the properties window for the Browser source, you'll see several settings:
+  - Local File: **Leave un-checked**
+  - URL: Enter the path to your local file path URI. (example: "file:///c:/{path/to/file}/browser-source.html")
+  - Width and Height: Set the dimensions of your dock. You can adjust these later if needed.
+    - We recommend either 1920x1080 or 1225x90.
+  - Custom CSS: If your file includes CSS styles, you can enter them here.
+
+**Position Your Dock**
+- In the main OBS Studio window, click and drag overlay to position it.
+- Use the arrow keys on your keyboard for precise positioning.
+
+#### Custom Dock
+
+**Define a New Custom Dock**
+- In the OBS Studio main window, click the "Docks" menu item.
+- Select "Custom Browser Docks...".
+- In the pop-out window define your custom dock.
+  - Dock Name: Enter a name for your custom dock.
+  - URL: Enter the path to your local file path URI. (example: "file:///c:/{path/to/file}/control-panel.html")
+
+**Add Your New Custom Dock**
+- In the OBS Studio main window, click the "Docks" menu item.
+- Select your custom dock from the list at the bottom of the tab.
+
+### Stream Labs
+  **_Coming Soon..._**
+
+
 
 ## License
 
 This project is licensed under the GNU General Public License V3 or later - see the [LICENSE](https://www.gnu.org/licenses/lgpl.html) file for details.
 
-## Acknowledgements
+[![License](https://www.gnu.org/graphics/gplv3-or-later.png)](LICENSE)
 
-Coming Soon...
+## Acknowledgements
+  **_Coming Soon_**
 
 ## Contributing
-
-Coming Soon...
+  **_Coming Soon_**
 
 ## Support
-
-Coming Soon...
+  **_Coming Soon_**
 

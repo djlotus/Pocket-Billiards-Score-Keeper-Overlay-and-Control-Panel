@@ -5,7 +5,7 @@ html {
    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
    color: white;
    font-size: 12px;
-   max-width: 580px;
+   min-width: 580px;
 }
 
 body {
