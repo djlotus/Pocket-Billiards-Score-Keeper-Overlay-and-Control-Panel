@@ -21,7 +21,7 @@
       Save Game (to text file, db in the future)
       Snapshot (capture game state to importable file)
       Simple Mode (names, race, and score)
-      Reload Match (from exisitng localStorage)
+      Restore Match (from exisitng localStorage)
  -->
 
 <body>
@@ -42,7 +42,7 @@
                <select id="playerOneCountry" name="playerOneCountry">
                   <option value=""></option>
                   <option value="Afghanistan">Afghanistan</option>
-                  <option value="Åland Islands">Åland Islands</option>
+                  <option value="Aland Islands">Åland Islands</option>
                   <option value="Albania">Albania</option>
                   <option value="Algeria">Algeria</option>
                   <option value="American Samoa">American Samoa</option>
@@ -309,7 +309,7 @@
                <select id="playerTwoCountry" name="playerTwoCountry">
                   <option value=""></option>
                   <option value="Afghanistan">Afghanistan</option>
-                  <option value="Åland Islands">Åland Islands</option>
+                  <option value="Aland Islands">Åland Islands</option>
                   <option value="Albania">Albania</option>
                   <option value="Algeria">Algeria</option>
                   <option value="American Samoa">American Samoa</option>
@@ -624,31 +624,23 @@
                   d="M0 416c0 17.7 14.3 32 32 32l54.7 0c12.3 28.3 40.5 48 73.3 48s61-19.7 73.3-48L480 448c17.7 0 32-14.3 32-32s-14.3-32-32-32l-246.7 0c-12.3-28.3-40.5-48-73.3-48s-61 19.7-73.3 48L32 384c-17.7 0-32 14.3-32 32zm128 0a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zM320 256a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm32-80c-32.8 0-61 19.7-73.3 48L32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l246.7 0c12.3 28.3 40.5 48 73.3 48s61-19.7 73.3-48l54.7 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-54.7 0c-12.3-28.3-40.5-48-73.3-48zM192 128a32 32 0 1 1 0-64 32 32 0 1 1 0 64zm73.3-64C253 35.7 224.8 16 192 16s-61 19.7-73.3 48L32 64C14.3 64 0 78.3 0 96s14.3 32 32 32l86.7 0c12.3 28.3 40.5 48 73.3 48s61-19.7 73.3-48L480 128c17.7 0 32-14.3 32-32s-14.3-32-32-32L265.3 64z" />
             </svg>Game Controls</h1>
          <p class="form-section-heading">Match</p>
-         <div class="form-group">
-            <!-- <div class="form-input">
-               <button class="hollow" id="exportMatch" disabled>Export Match</button>
-            </div> -->
-            <div class="form-input">
-               <button type="reset" id="resetMatch">Reset Match</button>
+         <article>
+            <div class="form-group">
+               <div class="form-input">
+                  <button id="startMatch">Start Match</button>
+               </div>
+               <div class="form-input">
+                  <button id="endMatch" disabled>End Match</button>
+               </div>
+               <div class="form-input">
+                  <button class="hollow" type="reset" id="resetMatch">Reset Match</button>
+               </div>
             </div>
-            <div class="form-input">
-               <button id="startMatch">Start Match</button>
-            </div>
-            <div class="form-input">
-               <button id="endMatch" disabled>End Match</button>
-            </div>
-         </div>
+         </article>
          <p class="form-section-heading">Scoring</p>
          <section id="scoring">
             <article>
                <p>Player/Team 1</p>
-               <!-- <div class="button-group">
-                  <button id="playerOneScorePlus" class="scorePlus" disabled>Score &plus;</button>
-                  <button id="playerOneScoreMinus" class="scoreMinus" disabled>Score
-                     &minus;</button>
-                  <button id="playerOneGamePlus" class="scorePlus">Game &plus;</button>
-                  <button id="playerOneGameMinus" class="scoreMinus">Game &minus;</button>
-               </div> -->
                <div class="form-group">
                   <div class="form-input">
                      <button id="playerOneScorePlus" class="scorePlus" disabled>Score &plus;</button>
@@ -669,12 +661,6 @@
             </article>
             <article>
                <p>Player/Team 2</p>
-               <!-- <div class="button-group">
-                  <button id="playerTwoScorePlus" class="scorePlus" disabled>Score &plus;</button>
-                  <button id="playerTwoScoreMinus" class="scoreMinus" disabled>Score &minus;</button>
-                  <button id="playerTwoGamePlus" class="scorePlus">Game &plus;</button>
-                  <button id="playerTwoGameMinus" class="scoreMinus">Game &minus;</button>
-               </div> -->
                <div class="form-group">
                   <div class="form-input">
                      <button id="playerTwoScorePlus" class="scorePlus" disabled>Score &plus;</button>
@@ -695,8 +681,17 @@
             </article>
          </section>
       </section>
-
    </form>
+   <hr>
+   <section id="utilities">
+      <h1><svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" fill="white" viewBox="0 0 640 512">
+            <path
+               d="M127.2 12h15 51.5 15L213 26.4l8.3 28.8c8.7 3.9 17 8.6 24.6 14.2L275 62.3l14.6-3.6 7.5 13 25.8 44.6 7.5 13L320 140.2l-20.8 21.6c.5 4.7 .8 9.4 .8 14.2s-.3 9.5-.8 14.2L320 211.8l10.4 10.8-7.5 13-25.8 44.6-7.5 13L275 289.7l-29.1-7.2c-7.6 5.6-15.9 10.4-24.6 14.2L213 325.6 208.8 340h-15H142.2h-15L123 325.6l-8.4-28.8c-8.7-3.9-17-8.6-24.6-14.2l-29.1 7.2-14.6 3.6-7.5-13L13.1 235.7l-7.5-13L16 211.8l20.8-21.6c-.5-4.7-.8-9.4-.8-14.2s.3-9.5 .8-14.2L16 140.2 5.6 129.3l7.5-13L38.8 71.7l7.5-13 14.6 3.6 29.1 7.2c7.6-5.6 15.8-10.4 24.6-14.2L123 26.4 127.2 12zm30 40l-6.9 23.8-2.9 9.9-9.8 3.4c-11 3.8-21.1 9.7-29.8 17.2l-7.8 6.8-10-2.5L66 104.7 55.2 123.3l17.2 17.9 7.1 7.4-1.9 10.1C76.6 164.3 76 170.1 76 176s.6 11.7 1.6 17.3l1.9 10.1-7.1 7.4L55.2 228.7 66 247.3 90 241.4l10-2.5 7.8 6.8c8.7 7.5 18.8 13.4 29.8 17.3l9.8 3.4 2.9 9.9 6.9 23.8h21.5l6.9-23.8 2.9-9.9 9.8-3.4c11-3.8 21.1-9.7 29.8-17.3l7.8-6.8 10 2.5 24.1 5.9 10.7-18.6-17.1-17.9-7.1-7.4 1.9-10.1c1.1-5.6 1.6-11.3 1.6-17.3s-.6-11.7-1.6-17.3l-1.9-10.1 7.1-7.4 17.1-17.9L270 104.7l-24.1 5.9-10 2.5-7.8-6.8c-8.7-7.5-18.8-13.4-29.8-17.3l-9.8-3.4-2.9-9.9L178.7 52H157.3zM128 176a40 40 0 1 1 80 0 40 40 0 1 1 -80 0zM628 303.2v15 51.5 15L613.6 389l-28.8 8.3c-3.9 8.7-8.6 17-14.2 24.6l7.2 29.1 3.6 14.6-13 7.5-44.6 25.8-13 7.5L499.8 496l-21.6-20.8c-4.7 .5-9.4 .8-14.2 .8s-9.5-.3-14.2-.8L428.2 496l-10.8 10.4-13-7.5-44.6-25.8-13-7.5 3.6-14.6 7.2-29.1c-5.6-7.6-10.4-15.9-14.2-24.6L314.4 389 300 384.8v-15V318.2v-15l14.4-4.2 28.8-8.4c3.9-8.7 8.6-17 14.2-24.6l-7.2-29.1-3.6-14.6 13-7.5 44.6-25.8 13-7.5L428.2 192l21.6 20.8c4.7-.5 9.4-.8 14.2-.8s9.5 .3 14.2 .8L499.8 192l10.8-10.4 13 7.5 44.6 25.8 13 7.5-3.6 14.6-7.2 29.1c5.6 7.6 10.4 15.8 14.2 24.6l28.8 8.4 14.4 4.2zm-40 30l-23.8-6.9-9.9-2.9-3.4-9.8c-3.8-11-9.7-21.1-17.2-29.8l-6.8-7.8 2.5-10 5.9-24.1-18.6-10.7-17.9 17.2-7.4 7.1-10.1-1.9c-5.6-1.1-11.3-1.6-17.3-1.6s-11.7 .6-17.3 1.6l-10.1 1.9-7.4-7.1-17.9-17.2L392.7 242l5.9 24.1 2.5 10-6.8 7.8c-7.5 8.7-13.4 18.8-17.3 29.8l-3.4 9.8-9.9 2.9L340 333.3v21.5l23.8 6.9 9.9 2.9 3.4 9.8c3.8 11 9.7 21.1 17.3 29.8l6.8 7.8-2.5 10L392.7 446l18.6 10.7 17.9-17.1 7.4-7.1 10.1 1.9c5.6 1.1 11.3 1.6 17.3 1.6s11.7-.6 17.3-1.6l10.1-1.9 7.4 7.1 17.9 17.1L535.3 446l-5.9-24.1-2.5-10 6.8-7.8c7.5-8.7 13.4-18.8 17.3-29.8l3.4-9.8 9.9-2.9 23.8-6.9V333.3zM464 304a40 40 0 1 1 0 80 40 40 0 1 1 0-80z" />
+         </svg>Utilities</h1>
+      <div class="form-input">
+         <button id="restoreMatch">Restore Match</button>
+      </div>
+   </section>
    <!-- Scripts -->
    <script src="scripts/main.js"></script>
    <script src="scripts/control-panel.js"></script>

@@ -228,7 +228,7 @@ function getCountryFlag(country) {
       Tonga: "TO",
       "Trinidad and Tobago": "TT",
       Tunisia: "TN",
-      Türkiye: "TR",
+      Turkey: "TR",
       Turkmenistan: "TM",
       "Turks and Caicos Islands": "TC",
       Tuvalu: "TV",
@@ -257,7 +257,7 @@ function getCountryFlag(country) {
    if (flagMap.hasOwnProperty(country)) {
       return flagMap[country];
    } else {
-      throw new Error("Invalid country code.");
+      throw new Error("Invalid country code:" + country);
    }
 }
 // - - - - - - - - - - - - - - - - - - - -
@@ -266,11 +266,13 @@ function getCountryFlag(country) {
 
 function populateWebStorage() {
    localStorage.setItem("playerOneName", null);
+   localStorage.setItem("playerOneCountryInput", null);
    localStorage.setItem("playerOneCountryImage", null);
    localStorage.setItem("playerOneHandicap", null);
    localStorage.setItem("playerOneGameScore", null);
    localStorage.setItem("playerOneMatchScore", null);
    localStorage.setItem("playerTwoName", null);
+   localStorage.setItem("playerTwoCountryInput", null);
    localStorage.setItem("playerTwoCountryImage", null);
    localStorage.setItem("playerTwoHandicap", null);
    localStorage.setItem("playerTwoGameScore", null);
