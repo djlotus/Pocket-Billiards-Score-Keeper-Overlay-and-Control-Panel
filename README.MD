@@ -40,7 +40,7 @@ Enter a name for your source (e.g., "Score Board").
 **Configure the Browser Source**
 - In the properties window for the Browser source, you'll see several settings:
   - Local File: **Leave un-checked**
-  - URL: Enter the path to your local file path URI. (example: "file:///c:/{path/to/file}/browser-source.html")
+  - URL: Enter the path to your local file path URI. (example: "file:///c:/{path/to/file}/scoreboard-top.html")
   - Width and Height: Set the dimensions of your dock. You can adjust these later if needed.
     - We recommend either 1920x1080 or 1225x90.
   - Custom CSS: If your file includes CSS styles, you can enter them here.
