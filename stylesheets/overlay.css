@@ -21,7 +21,20 @@ main {
    display: flex;
    justify-content: center;
 }
-#scoreboard {
+.bg-oil {
+   background: linear-gradient(
+      0deg,
+      rgba(23, 23, 23, 1) 25%,
+      rgba(0, 0, 0, 1) 75%
+   );
+}
+
+#p1Name,
+#p2Name {
+   font-size: 1.75rem;
+}
+#scoreboard,
+#scoreboard2 {
    display: grid;
    grid-template-columns: 125px 351px 27px 38px 143px 38px 27px 351px 125px;
    grid-template-rows: repeat(2, minmax(30px, auto));
@@ -47,9 +60,6 @@ main {
 .player1flag {
    grid-column: 1;
    background-color: #f0f;
-   border-bottom: 1px solid black;
-   border-left: 1px solid black;
-   border-bottom-left-radius: 1rem;
 }
 .player1name {
    grid-column: 2/4;
@@ -86,8 +96,6 @@ main {
 .player2flag {
    grid-column: 9;
    background-color: #f0f;
-   border-bottom: 1px solid black;
-   border-bottom-right-radius: 1rem;
 }
 .race {
    grid-column: 4/7;
@@ -100,20 +108,57 @@ main {
    border-left: 1px solid black;
    border-bottom: 1px solid black;
    border-right: 1px solid black;
-   border-bottom-left-radius: 2rem;
-   border-bottom-right-radius: 2rem;
 }
-.bg-oil {
-   background: linear-gradient(
-      0deg,
-      rgba(23, 23, 23, 1) 25%,
-      rgba(0, 0, 0, 1) 75%
-   );
+#scoreboard {
+   .player1flag {
+      border-bottom: 1px solid black;
+      border-left: 1px solid black;
+      border-bottom-left-radius: 1rem;
+   }
+
+   .player2flag {
+      border-bottom: 1px solid black;
+      border-bottom-right-radius: 1rem;
+   }
+   .race {
+      border-bottom-left-radius: 2rem;
+      border-bottom-right-radius: 2rem;
+   }
 }
 
-#p1Name,
-#p2Name {
-   font-size: 1.75rem;
+#scoreboard2 {
+   .player1flag {
+      grid-row: 2;
+      border-top: 1px solid black;
+      border-left: 1px solid black;
+      border-top-left-radius: 1rem;
+   }
+   .player1name {
+      grid-row: 2;
+   }
+   .player1score {
+      grid-row: 2;
+   }
+   .matchscore {
+      grid-row: 2;
+   }
+   .player2score {
+      grid-row: 2;
+   }
+   .player2name {
+      grid-row: 2;
+   }
+   .player2flag {
+      grid-row: 2;
+      border-top: 1px solid black;
+      border-left: 1px solid black;
+      border-top-right-radius: 1rem;
+   }
+   .race {
+      grid-row: 1;
+      border-top-left-radius: 2rem;
+      border-top-right-radius: 2rem;
+   }
 }
 
 @keyframes RotatingBorder {
