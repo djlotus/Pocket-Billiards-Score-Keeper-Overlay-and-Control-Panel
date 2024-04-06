@@ -109,56 +109,52 @@ main {
    border-bottom: 1px solid black;
    border-right: 1px solid black;
 }
-#scoreboard {
-   .player1flag {
-      border-bottom: 1px solid black;
-      border-left: 1px solid black;
-      border-bottom-left-radius: 1rem;
-   }
-
-   .player2flag {
-      border-bottom: 1px solid black;
-      border-bottom-right-radius: 1rem;
-   }
-   .race {
-      border-bottom-left-radius: 2rem;
-      border-bottom-right-radius: 2rem;
-   }
+#scoreboard .player1flag {
+   border-bottom: 1px solid black;
+   border-left: 1px solid black;
+   border-bottom-left-radius: 1rem;
 }
 
-#scoreboard2 {
-   .player1flag {
-      grid-row: 2;
-      border-top: 1px solid black;
-      border-left: 1px solid black;
-      border-top-left-radius: 1rem;
-   }
-   .player1name {
-      grid-row: 2;
-   }
-   .player1score {
-      grid-row: 2;
-   }
-   .matchscore {
-      grid-row: 2;
-   }
-   .player2score {
-      grid-row: 2;
-   }
-   .player2name {
-      grid-row: 2;
-   }
-   .player2flag {
-      grid-row: 2;
-      border-top: 1px solid black;
-      border-left: 1px solid black;
-      border-top-right-radius: 1rem;
-   }
-   .race {
-      grid-row: 1;
-      border-top-left-radius: 2rem;
-      border-top-right-radius: 2rem;
-   }
+#scoreboard .player2flag {
+   border-bottom: 1px solid black;
+   border-bottom-right-radius: 1rem;
+}
+#scoreboard .race {
+   border-bottom-left-radius: 2rem;
+   border-bottom-right-radius: 2rem;
+}
+
+#scoreboard2 .player1flag {
+   grid-row: 2;
+   border-top: 1px solid black;
+   border-left: 1px solid black;
+   border-top-left-radius: 1rem;
+}
+#scoreboard2 .player1name {
+   grid-row: 2;
+}
+#scoreboard2 .player1score {
+   grid-row: 2;
+}
+#scoreboard2 .matchscore {
+   grid-row: 2;
+}
+#scoreboard2 .player2score {
+   grid-row: 2;
+}
+#scoreboard2 .player2name {
+   grid-row: 2;
+}
+#scoreboard2 .player2flag {
+   grid-row: 2;
+   border-top: 1px solid black;
+   border-left: 1px solid black;
+   border-top-right-radius: 1rem;
+}
+#scoreboard2 .race {
+   grid-row: 1;
+   border-top-left-radius: 2rem;
+   border-top-right-radius: 2rem;
 }
 
 @keyframes RotatingBorder {
