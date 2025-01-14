@@ -21,7 +21,7 @@ Having an easy-to-use and easy-to-install control panel is essential for streame
 - [ ] Shot clock
 - [ ] Save game (to text file, db in the future)
 - [ ] Snapshot (capture game state to importable file)
-- [ ] Simple mode (names, race, and score)
+- [x] Simple mode (names, race, and score)
 - [x] Create prompt for generating URLs 
 - [ ] Reload match (from exisitng localStorage)
 
