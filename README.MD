@@ -23,15 +23,15 @@ Having an easy-to-use and easy-to-install control panel is essential for streame
 - [ ] Snapshot (capture game state to importable file)
 - [ ] Simple mode (names, race, and score)
 - [x] Create prompt for generating URLs 
-- [x] Reload match (from exisitng localStorage)
+- [ ] Reload match (from exisitng localStorage)
 
 ## Usage
 
 ### OBS Studio
 
 #### Getting Ready
-- Run ==generateURLS.bat== by simply left clicking.
-- Follow the prompts to generate a ==links.txt== file.
+- Run `generateURLS.bat` by simply left clicking.
+- Follow the prompts to generate a `links.txt` file.
 - Open this file for use configuring your custom dock and browser source.
 
 #### Browser Source
@@ -47,7 +47,7 @@ Enter a name for your source (e.g., "Score Board").
 - In the properties window for the Browser source, you'll see several settings:
   - Local File: **Leave un-checked**
   - URL: Enter the path to your local file path URI. (example: "file:///c:/{path/to/file}/scoreboard-top.html")
-    - Copy from ==links.txt==
+    - Copy from `links.txt`
   - Width and Height: Set the dimensions of your dock. You can adjust these later if needed.
     - We recommend either 1920x1080 or 1225x90.
   - Custom CSS: If your file includes CSS styles, you can enter them here.
@@ -64,7 +64,7 @@ Enter a name for your source (e.g., "Score Board").
 - In the pop-out window define your custom dock.
   - Dock Name: Enter a name for your custom dock.
   - URL: Enter the path to your local file path URI. (example: "file:///c:/{path/to/file}/control-panel.html")
-    - - Copy from ==links.txt==
+    - Copy from `links.txt`
 
 **Add Your New Custom Dock**
 - In the OBS Studio main window, click the "Docks" menu item.

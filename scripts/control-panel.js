@@ -33,6 +33,7 @@ const p2ScorePlusButton = document.getElementById("playerTwoScorePlus");
 const p2ScoreMinusButton = document.getElementById("playerTwoScoreMinus");
 const p2MatchPlusButton = document.getElementById("playerTwoGamePlus");
 const p2MatchMinusButton = document.getElementById("playerTwoGameMinus");
+const scoreboardTypeInput = document.getElementById("scoreboardType");
 
 // - - - - - - - - - - - - - - - - - - - -
 // Register Onchange Events on Form Elements
@@ -40,6 +41,7 @@ const p2MatchMinusButton = document.getElementById("playerTwoGameMinus");
 
 matchDisciplineInput.addEventListener("change", setDiscipline);
 matchTypeInput.addEventListener("change", setMatchType);
+scoreboardTypeInput.addEventListener("change", setScoreboardType);
 
 // - - - - - - - - - - - - - - - - - - - -
 // Register Buttons Event Listeners
@@ -144,7 +146,7 @@ p2MatchMinusButton.addEventListener("click", function (e) {
 // - - - - - - - - - - - - - - - - - - - -
 
 function SetInitialMatchData() {
-   // Update LocalStorage
+   // Initialize
    let p1NameInputValue = p1NameInput.value;
    let p1CountryInputValue = p1CountryInput.value;
    let p1CountryImageValue = getCountryFlag(p1CountryInputValue);
@@ -163,7 +165,9 @@ function SetInitialMatchData() {
    let matchP2TargetValue = matchP2TargetInput.value;
    let p2GameScoreInputValue = 0;
    let p2MatchScoreInputValue = 0;
+   let scoreboardTypeInputValue = scoreboardTypeInput.value;
 
+   // Update LocalStorage
    localStorage.setItem("playerOneName", p1NameInputValue);
    localStorage.setItem("playerOneCountryInput", p1CountryInputValue);
    localStorage.setItem("playerOneCountryImage", p1CountryImageValue);
@@ -183,6 +187,7 @@ function SetInitialMatchData() {
    localStorage.setItem("matchPlayerOneTarget", matchP1TargetValue);
    localStorage.setItem("matchPlayer2Target", matchP2TargetValue);
    localStorage.setItem("matchStatus", "active");
+   localStorage.setItem("scoreboardType", scoreboardTypeInputValue);
 
    // Broadcast to Overlay
    broadcast.postMessage({
@@ -201,6 +206,7 @@ function SetInitialMatchData() {
       matchPlayerTwoTargetValue: matchP2TargetValue,
       playerTwoGameScore: p2GameScoreInputValue,
       playerTwoMatchScore: p2MatchScoreInputValue,
+      scoreboardType: scoreboardTypeInputValue,
    });
 }
 
@@ -308,7 +314,23 @@ function restoreMatchDataFromWebStorage() {
 // Utility Functions
 // - - - - - - - - - - - - - - - - - - - -
 
-// Initialize
+function setScoreboardType() {
+   broadcast.postMessage({
+      scoreboardType: scoreboardTypeInput.value,
+   });
+   if (scoreboardTypeInput.value == "standard") {
+      p1CountryInput.removeAttribute("disabled");
+      p2CountryInput.removeAttribute("disabled");
+      p1HandicapInput.removeAttribute("disabled");
+      p2HandicapInput.removeAttribute("disabled");
+   } else if (scoreboardTypeInput.value == "simple") {
+      p1CountryInput.setAttribute("disabled", "");
+      p2CountryInput.setAttribute("disabled", "");
+      p1HandicapInput.setAttribute("disabled", "");
+      p2HandicapInput.setAttribute("disabled", "");
+   }
+}
+
 function setDiscipline() {
    if (
       (matchDisciplineInput.value == "8") |

@@ -20,6 +20,8 @@ let playerOneNameElement = document.getElementById("p1Name"),
    playerTwoMatchScoreElement = document.getElementById("p2MatchScore"),
    playerTwoRaceNeededElement = document.getElementById("player2RaceNeeded");
 
+const scoreboard = document.getElementById("scoreboard");
+
 // - - - - - - - - - - - - - - - - - - - -
 // Setup Broadcast Channel
 // - - - - - - - - - - - - - - - - - - - -
@@ -92,16 +94,16 @@ broadcast.onmessage = (event) => {
       ) {
          playerOneGameScoreElement.setAttribute("style", "display:none");
          playerTwoGameScoreElement.setAttribute("style", "display:none");
-         playerOneGameScoreContainer.classList.add("bg-oil");
-         playerTwoGameScoreContainer.classList.add("bg-oil");
+         playerOneGameScoreContainer.classList.toggle("bg-oil");
+         playerTwoGameScoreContainer.classList.toggle("bg-oil");
       } else if (
          (event.data.matchDisciplineValue == 14) |
          (event.data.matchDisciplineValue == 1)
       ) {
          playerOneGameScoreElement.setAttribute("style", "display:block");
          playerTwoGameScoreElement.setAttribute("style", "display:block");
-         playerOneGameScoreContainer.classList.remove("bg-oil");
-         playerTwoGameScoreContainer.classList.remove("bg-oil");
+         playerOneGameScoreContainer.classList.toggle("bg-oil");
+         playerTwoGameScoreContainer.classList.toggle("bg-oil");
       }
    }
    if (event.data.playerOneGameScore !== undefined) {
@@ -115,5 +117,14 @@ broadcast.onmessage = (event) => {
    }
    if (event.data.playerTwoMatchScore !== undefined) {
       playerTwoMatchScoreElement.innerText = event.data.playerTwoMatchScore;
+   }
+   if (event.data.scoreboardType !== undefined) {
+      if (event.data.scoreboardType == "standard") {
+         scoreboard.classList.remove("simple-mode");
+         scoreboard.classList.add("standard-mode");
+      } else if (event.data.scoreboardType == "simple") {
+         scoreboard.classList.remove("standard-mode");
+         scoreboard.classList.add("simple-mode");
+      }
    }
 };
